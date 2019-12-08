@@ -8,7 +8,7 @@ export default class App extends React.Component {
     this.state = {
       balance: '',
       rate: '',
-      term: '',
+      term: '15',
       payment: 0
     };
     this.changeBalance = this.changeBalance.bind(this);
@@ -45,7 +45,7 @@ export default class App extends React.Component {
     console.log(`this.state.payment: ${this.state.payment}`);
     const p = this.state.balance;
     const r = this.state.rate / 12;
-    const n = this.state.term;
+    const n = this.state.term * 12;
     console.log(`p: ${p}, r: ${r}, n: ${n}`);
     const top = r * ((1 + r) ** n);
     const bottom = ((1 + r) ** n) - 1;
