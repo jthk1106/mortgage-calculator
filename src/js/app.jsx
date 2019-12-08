@@ -8,7 +8,7 @@ export default class App extends React.Component {
     this.state = {
       balance: '',
       rate: '',
-      term: '15',
+      term: 15,
       payment: 0
     };
     this.changeBalance = this.changeBalance.bind(this);
