@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import React from 'react';
 
 export default class App extends React.Component {
@@ -66,7 +65,7 @@ export default class App extends React.Component {
 
     return (
       <div className='container form-horizontal'>
-        <h3 style={{fontSize:'8px'}}>Mortgage Calculator</h3>
+        <h3>Mortgage Calculator</h3>
         <h2>M O R T G A G E</h2>
         <h2>C A L C U L A T O R</h2>
         <hr />
