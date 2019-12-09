@@ -9,7 +9,7 @@ export default class App extends React.Component {
       balance: '',
       rate: '',
       term: 15,
-      payment: 0
+      payment: `$0 is your payment'
     };
     this.changeBalance = this.changeBalance.bind(this);
     this.changeRate = this.changeRate.bind(this);
@@ -56,7 +56,7 @@ export default class App extends React.Component {
     console.log(`m: ${m}`);
 
     this.setState({
-      payment: monthlyPayment
+      payment: `$${monthlyPayment} is your payment.`
     });
   }
 
@@ -89,7 +89,7 @@ export default class App extends React.Component {
         <button name='submit' onClick={ this.calculate }>submit</button>
         <hr />
         <div className='form-group'>
-          <div id='output' className='col-sm-10' name='output'>${ this.state.payment } is your payment.</div>
+          <div id='output' className='col-sm-10' name='output'>{ this.state.payment }</div>
         </div>
       </div>
     );
