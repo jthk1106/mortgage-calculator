@@ -35,25 +35,13 @@ export default class App extends React.Component {
   }
 
   calculate() {
-    // calculate mortgage payment
-    // M = P * (r(1+r)**n) / (1+r)**n-1
-    // M is monthly payment
-    // P is principal
-    // r is monthly interest rate(annual interest rate divided by 12)
-    // n is number of monthly payments
-
-    console.log(`this.state.payment: ${this.state.payment}`);
     const p = this.state.balance;
     const r = (this.state.rate / 100) / 12;
     const n = this.state.term * 12;
-    console.log(`p: ${p}, r: ${r}, n: ${n}`);
     const top = r * ((1 + r) ** n);
     const bottom = ((1 + r) ** n) - 1;
-    console.log(`top: ${top}, bottom: ${bottom}`);
     const m = p * (top / bottom);
     const monthlyPayment = m.toFixed(2)
-    // let mp = p * ((r * ((1 + r) ** n)) / (((1 + r) ** n) - 1));
-    console.log(`m: ${m}`);
 
     this.setState({
       payment: `$${monthlyPayment} is your payment.`
@@ -61,7 +49,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.term);
 
     return (
       <div className='container form-horizontal'>
@@ -93,8 +80,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-// p *
-// (r * ((1 + r) ** n))
-// p * ((r * ((1 + r) ** n))/(((1 + r) ** n) - 1))
-// (((1 + r) ** n) - 1)
