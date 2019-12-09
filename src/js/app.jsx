@@ -9,7 +9,7 @@ export default class App extends React.Component {
       balance: '',
       rate: '',
       term: 15,
-      payment: `$0 is your payment'
+      payment: `$0 is your payment'`
     };
     this.changeBalance = this.changeBalance.bind(this);
     this.changeRate = this.changeRate.bind(this);
