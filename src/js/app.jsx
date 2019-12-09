@@ -51,11 +51,12 @@ export default class App extends React.Component {
     const bottom = ((1 + r) ** n) - 1;
     console.log(`top: ${top}, bottom: ${bottom}`);
     const m = p * (top / bottom);
+    const monthlyPayment = m.toFixed(2)
     // let mp = p * ((r * ((1 + r) ** n)) / (((1 + r) ** n) - 1));
     console.log(`m: ${m}`);
 
     this.setState({
-      payment: m
+      payment: monthlyPayment
     });
   }
 
@@ -66,13 +67,14 @@ export default class App extends React.Component {
 
     return (
       <div className='container form-horizontal'>
+        <h3>Mortgage Calculator</h3>
         <h2>M O R T G A G E</h2>
         <h2>C A L C U L A T O R</h2>
         <hr />
-        <div className='form-group'>
-          <input className='col-sm-10' value={ this.state.balance } onChange={ this.changeBalance } name='balance' type='number' />
+        {<div className='form-group'>
+          <input className='col-sm-10' value={ this.state.balance } onChange={ this.changeBalance } name="balance" type='number' />
           <label className='col-sm-2'>balance</label>
-        </div>
+        </div>}
         <div className='form-group'>
           <input className='col-sm-10' value={ this.state.rate } onChange={ this.changeRate } name='rate' type='number' step='0.01' />
           <label className='col-sm-2'>rate</label>
