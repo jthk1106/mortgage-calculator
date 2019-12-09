@@ -9,7 +9,7 @@ export default class App extends React.Component {
       balance: '',
       rate: '',
       term: 15,
-      payment: `$0 is your payment'`
+      payment: `$0 is your payment`
     };
     this.changeBalance = this.changeBalance.bind(this);
     this.changeRate = this.changeRate.bind(this);
@@ -42,9 +42,10 @@ export default class App extends React.Component {
     // P is principal
     // r is monthly interest rate(annual interest rate divided by 12)
     // n is number of monthly payments
+
     console.log(`this.state.payment: ${this.state.payment}`);
     const p = this.state.balance;
-    const r = this.state.rate / 12;
+    const r = (this.state.rate / 100) / 12;
     const n = this.state.term * 12;
     console.log(`p: ${p}, r: ${r}, n: ${n}`);
     const top = r * ((1 + r) ** n);
@@ -61,13 +62,11 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.balance);
-    console.log(this.state.rate);
     console.log(this.state.term);
 
     return (
       <div className='container form-horizontal'>
-        <h3>Mortgage Calculator</h3>
+        <h3 style={{fontSize:'8px'}}>Mortgage Calculator</h3>
         <h2>M O R T G A G E</h2>
         <h2>C A L C U L A T O R</h2>
         <hr />
